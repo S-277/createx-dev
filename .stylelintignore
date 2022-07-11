@@ -1,0 +1,5 @@
+*.html
+src/*.html
+src/partials/*.html
+./src/*.html
+./src/partials/*.html

@@ -1,0 +1,76 @@
+.header {
+  padding: 22px 0;
+
+  &__container {
+    @include flex-all-sb;
+  }
+
+  &__nav {
+    margin-left: -120px;
+  }
+
+  &--main {
+    background-color: var(--light-color);
+  }
+}
+
+.nav {
+  &__list {
+    @include flex-v-center;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 160%;
+    color: var(--gray-color);
+  }
+}
+
+.header-contacts {
+  @include flex-v-center;
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &:not(:last-child) {
+      margin-right: 35px;
+    }
+  }
+}
+
+.contact-link {
+  padding-left: 52px;
+  background-position: left center;
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+
+  &__caption {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--gray-color);
+  }
+
+  &__value {
+    font-size: 18px;
+    line-height: 150%;
+    color: #1e212c;
+  }
+
+  &--phone {
+    background-image: url("../../img/icons-not-sprite/iphone-icon.svg");
+  }
+
+  &--mail {
+    background-image: url("../../img/icons-not-sprite/chat-icon.svg");
+  }
+}

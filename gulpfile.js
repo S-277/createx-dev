@@ -258,8 +258,9 @@ const htmlInclude = () => {
 const watchFiles = () => {
   browserSync.init({
     server: {
-      baseDir: `${buildFolder}`
+      baseDir: `${buildFolder}`,
     },
+    notify: false,
   });
 
   watch(paths.srcScss, styles);
