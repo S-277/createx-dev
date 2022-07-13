@@ -1,0 +1,126 @@
+.service-section {
+  @include bg-cover;
+
+  padding-top: 212px;
+  padding-bottom: 80px;
+  background-image: url("../../img/service-bg.jpg");
+
+  &__list {
+    margin-bottom: 80px;
+  }
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--grid-gap);
+}
+
+.service-item {
+  position: relative;
+  display: block;
+  border: 1px solid #e5e8ed;
+  border-radius: 4px;
+  padding: 0 10px;
+  padding-top: 87px;
+  padding-bottom: 90px;
+  box-shadow: 0 80px 80px -20px rgba(154, 156, 165, 0.08),
+    0 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0 12px 10px -6px rgba(154, 156, 165, 0.04),
+    0 4px 4px -4px rgba(30, 33, 44, 0.03);
+  background: var(--light-color);
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    border-radius: inherit;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--ebony-color);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    inset: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    border-radius: inherit;
+    background-color: rgba(#1e212c, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    inset: 0;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-bottom: 25px;
+    width: 52px;
+    height: 52px;
+    fill: var(--primary-color);
+    object-fit: cover;
+    transition: fill 0.3s ease-in-out;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+    color: var(--ebony-color);
+    transition: color 0.3s ease-in-out;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+
+    .service-item__icon {
+      fill: var(--light-color);
+    }
+
+    .service-item__title {
+      color: var(--light-color);
+    }
+  }
+
+  &--construct {
+    &::before {
+      background-image: url("../../img/service-1.jpg");
+    }
+  }
+
+  &--project {
+    &::before {
+      background-image: url("../../img/service-2.jpg");
+    }
+  }
+
+  &--design {
+    &::before {
+      background-image: url("../../img/service-3.jpg");
+    }
+  }
+
+  &--repairs {
+    &::before {
+      background-image: url("../../img/service-4.jpg");
+    }
+  }
+}

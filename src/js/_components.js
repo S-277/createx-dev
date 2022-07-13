@@ -1,1 +1,2 @@
-console.log('components');
+import './components/index-slider';
+import './components/circle-progress';
