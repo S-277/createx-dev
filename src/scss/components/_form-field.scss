@@ -23,6 +23,12 @@
     &::placeholder {
       color: #9a9ca5;
     }
+
+    &--textarea {
+      padding: 10px;
+      height: 66px;
+      resize: none;
+    }
   }
 
   &--large {
@@ -30,6 +36,15 @@
 
     .form-field__input {
       width: 100%;
+    }
+  }
+
+  &--gray {
+    width: 100%;
+
+    .form-field__input {
+      width: 100%;
+      background: #f4f5f7;
     }
   }
 }

@@ -1,5 +1,5 @@
 .recent-news {
-  padding: 0 0 50px;
+  padding: 0 0 120px;
   background-color: var(--light-color);
 
   &__list {
@@ -33,12 +33,6 @@
     0 4px 4px -4px rgba(30, 33, 44, 0.03);
   background-color: var(--light-color);
 
-  &--small {
-    .recent-article__descr {
-      display: none;
-    }
-  }
-
   &__img {
     object-fit: cover;
   }
@@ -52,6 +46,12 @@
       .recent-article__title {
         margin-bottom: 10px;
       }
+    }
+  }
+
+  &--small {
+    .recent-article__descr {
+      display: none;
     }
   }
 
@@ -71,9 +71,6 @@
     &:hover {
       color: var(--primary-color);
     }
-  }
-
-  &__meta {
   }
 
   &__descr {
@@ -124,13 +121,5 @@
       background-size: 16px 16px;
       background-repeat: no-repeat;
     }
-  }
-  &__item--comments {
-  }
-}
-.learn-more {
-  &__subtitle {
-  }
-  &__btn {
   }
 }
