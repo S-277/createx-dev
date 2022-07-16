@@ -1,6 +1,7 @@
 .learn-more {
   @include flex-all-center;
-
+  z-index: 4;
+  
   &__subtitle {
     margin: 0;
     margin-right: 40px;
@@ -8,5 +9,9 @@
     font-size: 28px;
     line-height: 150%;
     color: var(--ebony-color);
+  }
+
+  &__btn {
+    cursor: pointer;
   }
 }

@@ -1,0 +1,33 @@
+.page-hero {
+  padding-top: 153px;
+  padding-bottom: 178px;
+  background-image: url("../../img/services-hero-bg.png");
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-color: var(--athens-color);
+
+
+  &__breadcrumbs {
+    margin-bottom: 40px;
+  }
+
+  &__tilte {
+    margin: 0;
+    margin-bottom: 24px;
+    max-width: 600px;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 130%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ebony-color);
+  }
+
+  &__descr {
+    margin: 0;
+    max-width: 600px;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--storm-color);
+  }
+}
