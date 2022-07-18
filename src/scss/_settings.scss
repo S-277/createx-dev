@@ -161,7 +161,7 @@ a {
       border-color: var(--light-color);
       color: var(--light-color);
     }
-    
+
     &-primary {
       border-color: var(--primary-color);
       color: var(--primary-color);
@@ -194,7 +194,12 @@ a {
   color: var(--storm-color);
 
   &--center {
+    margin: 0;
+    margin-bottom: 60px;
+    font-size: 18px;
+    line-height: 150%;
     text-align: center;
+    color: var(--storm-color);
   }
 }
 
@@ -231,7 +236,7 @@ a {
     height: 16px;
     transition: background-color 0.3s ease-in-out;
   }
-  
+
   &__text::after {
     content: "";
     position: absolute;
@@ -240,14 +245,14 @@ a {
     display: inline-block;
     width: 16px;
     height: 16px;
-    opacity: 0;
     background-image: url("../img/icons-not-sprite/check.svg");
     background-position: center;
     background-size: 10px 8px;
     background-repeat: no-repeat;
+    opacity: 0;
     transition: opacity 0.3s ease-in-out;
   }
-  
+
   &__input:checked + &__text::before {
     background-color: var(--primary-color);
   }
@@ -255,8 +260,18 @@ a {
   &__input:checked + &__text::after {
     opacity: 1;
   }
-  
+
   &__input:focus + &__text {
     outline: 1px solid var(--primary-color);
   }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+}
+
+.title-light {
+  color: var(--light-color);
 }

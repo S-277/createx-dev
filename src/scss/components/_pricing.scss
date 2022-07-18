@@ -1,0 +1,120 @@
+.pricing {
+  position: relative;
+  z-index: -1;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  background-color: var(--athens-color);
+
+  &__descr {
+    margin-bottom: 60px;
+  }
+
+  &__decorate {
+    position: absolute;
+    left: -10px;
+    top: 1px;
+    z-index: -2;
+    display: block;
+    pointer-events: none;
+  }
+}
+
+.table-wrapper {
+  overflow: hidden;
+  border: 1px solid #e5e8ed;
+  border-radius: 4px;
+  width: 100%;
+  background: var(--light-color);
+  box-shadow: 0 80px 80px -20px rgba(154, 156, 165, 0.08),
+    0 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0 12px 10px -6px rgba(154, 156, 165, 0.04),
+    0 4px 4px -4px rgba(30, 33, 44, 0.03);
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+
+  &__th {
+    padding-top: 31px;
+    padding-bottom: 27px;
+
+    &:first-child {
+      vertical-align: bottom;
+      padding: 0 22px;
+      padding-bottom: 27px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 150%;
+      text-align: left;
+      color: var(--ebony-color);
+    }
+  }
+
+  &__col {
+    vertical-align: middle;
+    padding: 16px 4px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    text-align: center;
+    color: var(--gray-color);
+
+    .btn {
+      padding: 7px 24px;
+      font-size: 12px;
+    }
+
+    &:first-child {
+      padding-right: 5px;
+      padding-left: 22px;
+      text-align: left;
+    }
+  }
+
+  &__header {
+  }
+
+  &__row {
+  }
+
+  &__heading {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--ebony-color);
+  }
+
+  &__per {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: var(--storm-color);
+  }
+
+  &__body {
+    .table__row {
+      &:nth-child(odd) {
+        background-color: var(--athens-color);
+      }
+    }
+  }
+
+  &__check {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    background-image: url("../../img/icons-not-sprite/table-check.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__text {
+  }
+}
