@@ -37,6 +37,10 @@
     font-size: 16px;
     line-height: 160%;
     color: var(--gray-color);
+
+    &--current {
+      color: var(--primary-color);
+    }
   }
 }
 
