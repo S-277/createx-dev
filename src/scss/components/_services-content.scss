@@ -32,8 +32,8 @@
   &__item {
     display: grid;
     align-items: center;
-    grid-gap: 30px;
     grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
 
     &:not(:last-child) {
       margin-bottom: 116px;

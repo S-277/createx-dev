@@ -5,8 +5,8 @@
   &__list {
     counter-reset: section;
     display: grid;
-    grid-gap: 30px;
     grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
   }
 
   &__item {

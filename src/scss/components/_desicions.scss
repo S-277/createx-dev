@@ -1,0 +1,55 @@
+.desicions {
+  padding-top: 80px;
+  padding-bottom: 30px;
+  background-color: var(--athens-color);
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+  }
+
+  &__left {
+    grid-column: 5 span;
+
+    img {
+      margin-bottom: -90px;
+    }
+  }
+
+  &__right {
+    grid-column: 7 span;
+    padding-left: 104px;
+  }
+
+  &__title {
+  }
+
+  &__list {
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 38px;
+    font-size: 16px;
+    line-height: 160%;
+    color: var(--gray-color);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background-image: url("../../img/icons-not-sprite/desicions-check.svg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
