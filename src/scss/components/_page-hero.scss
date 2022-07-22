@@ -54,4 +54,8 @@
     background-position: right -10px top 47px;
     background-color: var(--light-color);
   }
+
+  &--about {
+    background-image: url("../../img/about-hero-bg.png");
+  }
 }

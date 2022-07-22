@@ -5,12 +5,18 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 100px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 40px 100px;
   }
 
   &__item {
     display: flex;
     justify-content: center;
+  }
+
+  &--about {
+    padding-top: 120px;
+    padding-bottom: 124px;
+    background-color: var(--light-color);
   }
 }
