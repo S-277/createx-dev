@@ -1,0 +1,130 @@
+.post {
+  &__cover {
+    display: block;
+    margin-top: -80px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    padding: 0 15px;
+    padding-top: 80px;
+    max-width: 840px;
+  }
+
+  &__share {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 160%;
+    color: var(--ebony-color);
+
+    span {
+      margin-right: 10px;
+    }
+
+    svg {
+      fill: var(--storm-color);
+      opacity: 1;
+    }
+  }
+
+  &__content {
+    padding-bottom: 60px;
+
+    * {
+      margin-bottom: 28px;
+      font-size: 16px;
+      color: var(--gray-color);
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    h2 {
+      margin: 0;
+      margin-bottom: 26px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+      color: var(--ebony-color);
+    }
+
+    h3 {
+      margin: 0;
+      margin-bottom: 26px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 150%;
+      color: var(--ebony-color);
+    }
+
+    p {
+      margin: 0;
+      margin-bottom: 28px;
+      font-size: 16px;
+      line-height: 160%;
+      color: var(--gray-color);
+    }
+
+    blockquote {
+      position: relative;
+      margin: 0;
+      margin-bottom: 28px;
+      padding: 20px 0;
+      padding-left: 58px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+      color: var(--ebony-color);
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 19px;
+        width: 28px;
+        height: 20px;
+        background-image: url("../../img/icons-not-sprite/quote.svg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      margin-bottom: 28px;
+      padding: 0;
+      font-size: 16px;
+      line-height: 130%;
+      color: var(--gray-color);
+
+      li {
+        position: relative;
+        padding-left: 32px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 4px;
+          width: 16px;
+          height: 16px;
+          background-image: url("../../img/icons-not-sprite/check-list.svg");
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 9px;
+        }
+      }
+    }
+  }
+}
