@@ -1,0 +1,39 @@
+.post-form {
+  padding-bottom: 180px;
+
+  &__title {
+    margin-bottom: 48px;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .form-field__caption {
+    margin-bottom: 9px;
+    font-size: 16px;
+    line-height: 160%;
+  }
+
+  .form-field__input {
+    height: 50px;
+    font-size: 16px;
+  }
+
+  &__field {
+    width: 48%;
+
+    &--big {
+      margin-top: 24px;
+      margin-bottom: 46px;
+      width: 100%;
+
+      .form-field__input {
+        padding-left: 16px;
+        height: 100px;
+      }
+    }
+  }
+}

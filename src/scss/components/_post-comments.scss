@@ -1,0 +1,10 @@
+.comments {
+  padding-top: 80px;
+  padding-bottom: 120px;
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
+}
