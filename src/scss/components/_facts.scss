@@ -1,13 +1,48 @@
 .facts {
-  padding: 180px 0 180px;
+  padding-top: 180px;
+  padding-bottom: 180px;
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     margin: 0 auto;
     min-height: 190px;
     max-width: 736px;
     gap: 48px;
+
+    @include small-tablet {
+      row-gap: 40px;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    grid-column: 3 span;
+    overflow: hidden;
+    height: 200px;
+
+    @include small-tablet {
+      display: flex;
+      justify-content: center;
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      grid-column: 2 span;
+    }
+  }
+
+  @include small-tablet {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include mobile {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
 

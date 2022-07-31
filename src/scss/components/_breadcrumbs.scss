@@ -1,6 +1,8 @@
 .breadcrumbs {
   @include flex-v-center;
 
+  flex-wrap: wrap;
+
   &__item {
     position: relative;
 
@@ -21,9 +23,24 @@
     font-size: 14px;
     line-height: 150%;
     color: var(--gray-color);
+    transition: color 0.3s ease-in-out;
 
     &:not([href]) {
       color: #9a9ca5;
+      pointer-events: none;
+    }
+
+    &:focus {
+      outline: 1px solid var(--primary-color);
+      outline-offset: 3px;
+    }
+
+    &:hover {
+      color: var(--primary-color);
+    }
+
+    &:active {
+      color: var(--active-color);
     }
   }
 }

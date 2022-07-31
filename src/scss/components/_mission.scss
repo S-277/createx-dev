@@ -9,6 +9,21 @@
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 30px;
     gap: calc(var(--mission-gap) * 2);
+
+    @include tablet {
+      --mission-gap: 34px;
+    }
+
+    @include small-tablet {
+      --mission-gap: 10px;
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__item {
@@ -31,6 +46,14 @@
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
+
+        @include mobile {
+          display: none;
+        }
+      }
+
+      @include mobile {
+        margin-bottom: 35px;
       }
     }
 
@@ -44,6 +67,11 @@
 
     &--comfort {
       background-image: url("../../img/icons-not-sprite/comfort-ico.svg");
+    }
+
+    @include mobile {
+      margin-bottom: 35px;
+      max-width: 65%;
     }
   }
 

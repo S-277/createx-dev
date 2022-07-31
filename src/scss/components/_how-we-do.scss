@@ -7,6 +7,10 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 30px;
+
+    @include mobile {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   &__item {
@@ -37,7 +41,20 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+
+        @include tablet {
+          display: none;
+        }
       }
+      
+    }
+
+    @include tablet {
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
     }
   }
 

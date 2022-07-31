@@ -1,8 +1,30 @@
 import Swiper, {
-  Navigation, Thumbs
+  Navigation, Thumbs, Pagination, Autoplay
 } from 'swiper';
 
-Swiper.use([Navigation, Thumbs]);
+Swiper.use([Navigation, Thumbs, Pagination, Autoplay]);
+
+
+// index slider
+
+
+const heroSlider = new Swiper('.hero-slider', {
+  slidesPerView: '1',
+  speed: 1500,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+  },
+  pagination: {
+    el: '.hero__pagination',
+    type: 'bullets',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.hero__next',
+    prevEl: '.hero__prev',
+  },
+});
 
 const portSlider = document.querySelector('.portfolio-section__items');
 const relatedSlider = document.querySelector('.related-projects__items');
@@ -10,8 +32,16 @@ const relatedSlider = document.querySelector('.related-projects__items');
 
 if (portSlider) {
   const portfolioSlider = new Swiper(portSlider, {
-    slidesPerView: '3',
+    slidesPerView: 1,
     spaceBetween: 30,
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      }
+    },
     loop: false,
     on: {
       init: function () {
@@ -68,7 +98,15 @@ if (portSlider) {
 
 if (relatedSlider) {
   const relatedProjSlider = new Swiper(relatedSlider, {
-    slidesPerView: '3',
+    slidesPerView: 1,
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      }
+    },
     spaceBetween: 30,
     loop: false,
     on: {
@@ -147,9 +185,17 @@ const workImages = document.querySelector('.work-images-slider');
 if (workImages) {
   const workSlider = new Swiper('.work-images-nav', {
     spaceBetween: 20,
-    slidesPerView: 10,
+    slidesPerView: 3,
     freeMode: true,
     watchSlidesProgress: true,
+    breakpoints: {
+      576: {
+        slidesPerView: 6,
+      },
+      768: {
+        slidesPerView: 10,
+      }
+    },
   });
   const workSlidesNav = new Swiper(workImages, {
     spaceBetween: 20,
@@ -204,3 +250,4 @@ if (historySlider) {
     });
   });
 };
+

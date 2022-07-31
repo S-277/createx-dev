@@ -9,9 +9,19 @@
     margin-bottom: 36px;
   }
 
+  &__content {
+    @include small-tablet {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
   &__item {
     grid-column: 8 span;
     overflow: hidden;
+
+    @include small-tablet {
+      grid-column: 4 span;
+    }
   }
 
   &__slider-nav {
@@ -20,6 +30,7 @@
 
   &__image {
     margin-bottom: 34px;
+    width: 100%;
     max-width: 810px;
     max-height: 450px;
     object-fit: cover;
@@ -73,10 +84,31 @@
       height: 8px;
       box-sizing: content-box;
       background-color: currentcolor;
+
+      @include small-tablet {
+        top: 3px;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      color: var(--active-color);
+    }
+
+    &:hover {
+      color: var(--primary-color);
+    }
+
+    &:active {
+      color: var(--active-color);
     }
 
     &--active {
       color: var(--primary-color);
+    }
+
+    @include tablet {
+      font-size: 20px;
     }
   }
 }

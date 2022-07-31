@@ -1,13 +1,6 @@
 .hero {
-  padding-top: 220px;
-  padding-bottom: 353px;
-  background-image: url("../../img/hero-bg.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: var(--gray-color);
-
   &__content {
+    z-index: 4;
     max-width: 590px;
   }
 
@@ -15,7 +8,115 @@
     .btn {
       &:not(:last-child) {
         margin-right: 22px;
+
+        @include mobile {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
       }
     }
+  }
+
+  &__next {
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    z-index: 10;
+    background-color: var(--light-color);
+    transform: translateY(-50%);
+
+    @include big-desktop {
+      display: none;
+    }
+  }
+
+  &__prev {
+    position: absolute;
+    left: 32px;
+    top: 50%;
+    z-index: 10;
+    background-color: var(--light-color);
+    transform: translateY(-50%);
+
+    @include big-desktop {
+      display: none;
+    }
+  }
+
+  &__pagination {
+    counter-reset: pagination;
+    left: calc((100% - 1230px) / 2) !important;
+    bottom: 80px !important;
+    width: auto !important;
+
+    .swiper-pagination-bullet {
+      counter-increment: pagination;
+      position: relative;
+      border-radius: 1px;
+      width: 178px;
+      height: 2px;
+      text-align: left;
+      background-color: var(--light-color);
+      opacity: 0.5;
+      transition: opacity 0.3s ease-in-out;
+
+      &::before {
+        content: "0" counter(pagination);
+        position: relative;
+        top: -60px;
+        display: block;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 210%;
+        color: var(--light-color);
+      }
+
+      &-active {
+        opacity: 1;
+        animation-name: circle-to-square;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+      }
+
+      @include small-tablet {
+        max-width: 110px;
+      }
+    }
+
+    @include mini-desktop {
+      left: 15px !important;
+    }
+
+    @include small-tablet {
+      width: calc(100% - 15px) !important;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-slide {
+  padding-top: 220px;
+  padding-bottom: 353px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include small-tablet {
+    padding-top: 150px;
+    padding-bottom: 250px;
+  }
+
+  @include mobile {
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 }

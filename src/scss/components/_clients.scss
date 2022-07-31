@@ -5,12 +5,28 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     gap: 100px;
+
+    @include tablet {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   &__item {
     display: flex;
     justify-content: center;
+    grid-column: 2 span;
+
+    @include tablet {
+      grid-column: 2 span;
+    }
+  }
+
+  &__link {
+    &:focus {
+      outline: 1px solid var(--primary-color);
+      outline-offset: 3px;
+    }
   }
 }

@@ -37,6 +37,10 @@
 
     &:not(:last-child) {
       margin-bottom: 116px;
+
+      @include small-tablet {
+        margin-bottom: 40px;
+      }
     }
 
     &--reverse {
@@ -48,17 +52,35 @@
       .services__image {
         display: flex;
         justify-content: flex-end;
+
+        @include small-tablet {
+          display: block;
+        }
       }
+    }
+
+    @include small-tablet {
+      display: block;
     }
   }
 
   &__image {
     grid-column: 6 span;
+
+    @include small-tablet {
+      * {
+        width: 100%;
+      }
+    }
   }
 
   &__info {
     grid-column: 6 span;
     padding: 20px 25px;
+
+    @include small-tablet {
+      padding: 20px 0;
+    }
   }
 
   &__title {
@@ -83,20 +105,8 @@
     font-size: 14px;
     letter-spacing: 0.5px;
   }
-}
-.container {
-}
-.visually-hidden {
-}
-.sevices {
-}
-.list-reset {
-}
-.image {
-}
-.btn {
-}
-.btn--stroke {
-}
-.btn--stroke-white {
+
+  @include small-tablet {
+    padding: 40px 0;
+  }
 }

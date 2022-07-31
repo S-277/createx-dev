@@ -8,12 +8,33 @@
   &__list {
     margin-bottom: 80px;
   }
+
+  @include mobile {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
 }
 
 .service-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   gap: var(--grid-gap);
+
+  &__item {
+    grid-column: 3 span;
+
+    @include tablet {
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
+    }
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .service-item {
@@ -55,6 +76,11 @@
     inset: 0;
   }
 
+  &:focus {
+    outline: 1px solid var(--primary-color);
+    outline-offset: 3px;
+  }
+
   &__content {
     position: relative;
     z-index: 10;
@@ -80,6 +106,10 @@
     text-align: center;
     color: var(--ebony-color);
     transition: color 0.3s ease-in-out;
+
+    @include mini-desktop {
+      font-size: 17px;
+    }
   }
 
   &:hover {

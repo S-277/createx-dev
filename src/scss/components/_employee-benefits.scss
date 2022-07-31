@@ -10,6 +10,21 @@
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 30px;
     gap: calc(var(--mission-gap) * 2);
+
+    @include tablet {
+      --mission-gap: 34px;
+    }
+
+    @include small-tablet {
+      --mission-gap: 10px;
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__item {
@@ -32,6 +47,10 @@
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
+
+        @include mobile {
+          display: none;
+        }
       }
     }
 
@@ -45,6 +64,11 @@
 
     &--salary {
       background-image: url("../../img/icons-not-sprite/salary.svg");
+    }
+
+    @include mobile {
+      margin-bottom: 35px;
+      max-width: 65%;
     }
   }
 
@@ -63,6 +87,11 @@
     line-height: 160%;
     color: var(--storm-color);
   }
+
+  @include mobile {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
 .know-form {
@@ -70,8 +99,7 @@
   top: 92px;
   border-radius: 4px;
   padding: 48px 60px;
-  box-shadow: 
-    0 80px 80px -20px rgba(154, 156, 165, 0.08),
+  box-shadow: 0 80px 80px -20px rgba(154, 156, 165, 0.08),
     0 30px 24px -10px rgba(154, 156, 165, 0.05),
     0 12px 10px -6px rgba(154, 156, 165, 0.04),
     0 4px 4px -4px rgba(30, 33, 44, 0.03);
@@ -90,6 +118,30 @@
   &__content {
     display: flex;
     align-items: flex-end;
+
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      & > * {
+        flex-grow: initial;
+        margin-right: 0 !important;
+        margin-bottom: 20px;
+        width: 49%;
+
+        .form-field__input {
+          width: 100%;
+        }
+
+        @include mobile {
+          width: 100%;
+        }
+      }
+    }
+
+    @include mobile {
+      display: block;
+    }
   }
 
   &__field {
@@ -98,5 +150,10 @@
 
   &__btn {
     padding: 11px 30px;
+  }
+
+  @include mobile {
+    top: initial;
+    padding: 28px 30px;
   }
 }

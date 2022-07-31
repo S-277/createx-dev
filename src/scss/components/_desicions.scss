@@ -7,6 +7,10 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 30px;
+
+    @include tablet {
+      display: block;
+    }
   }
 
   &__left {
@@ -14,18 +18,20 @@
 
     img {
       margin-bottom: -90px;
+
+      @include tablet {
+        margin-bottom: 10px;
+      }
     }
   }
 
   &__right {
     grid-column: 7 span;
     padding-left: 104px;
-  }
 
-  &__title {
-  }
-
-  &__list {
+    @include tablet {
+      padding-left: 0;
+    }
   }
 
   &__item {
@@ -51,5 +57,10 @@
     &:not(:last-child) {
       margin-bottom: 20px;
     }
+  }
+
+  @include tablet {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }

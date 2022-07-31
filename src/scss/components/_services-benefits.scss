@@ -11,6 +11,21 @@
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 30px;
     gap: calc(var(--mission-gap) * 2);
+
+    @include tablet {
+      --mission-gap: 34px;
+    }
+
+    @include small-tablet {
+      --mission-gap: 10px;
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__item {
@@ -33,6 +48,10 @@
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
+
+        @include mobile {
+          display: none;
+        }
       }
     }
 
@@ -46,6 +65,11 @@
 
     &--control {
       background-image: url("../../img/icons-not-sprite/services-benefits-3.svg");
+    }
+
+    @include mobile {
+      margin-bottom: 35px;
+      max-width: 65%;
     }
   }
 
@@ -66,8 +90,8 @@
   }
 
   &__btn {
+    width: 100%;
+    max-width: 390px;
     transform: translateY(68px);
-    width: 390px;
   }
 }
-

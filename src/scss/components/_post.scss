@@ -11,6 +11,10 @@
     padding: 0 15px;
     padding-top: 80px;
     max-width: 840px;
+
+    @include mobile {
+      padding-top: 40px;
+    }
   }
 
   &__share {

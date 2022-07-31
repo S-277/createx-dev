@@ -7,6 +7,33 @@
 
   &__nav {
     margin-left: -120px;
+
+    @include mini-desktop {
+      margin-left: 0;
+    }
+
+    @include tablet {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 1000;
+      display: block;
+      overflow-y: auto;
+      padding: 50px;
+      width: 80%;
+      height: 100vh;
+      background-color: #fff;
+      transform: translateX(-150%);
+      transition: transform 0.3s ease-in-out;
+
+      &--active {
+        transform: none;
+      }
+    }
+
+    @include mobile {
+      padding: 20px;
+    }
   }
 
   &--main {
@@ -24,11 +51,21 @@
 .nav {
   &__list {
     @include flex-v-center;
+
+    @include tablet {
+      display: block;
+      margin-bottom: 40px;
+    }
   }
 
   &__item {
     &:not(:last-child) {
       margin-right: 40px;
+
+      @include tablet {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
     }
   }
 
@@ -37,6 +74,20 @@
     font-size: 16px;
     line-height: 160%;
     color: var(--gray-color);
+    transition: color 0.3s ease-in-out;
+
+    &:focus {
+      outline: 1px solid var(--primary-color);
+      outline-offset: 3px;
+    }
+
+    &:hover {
+      color: var(--primary-color);
+    }
+
+    &:active {
+      color: var(--active-color);
+    }
 
     &--current {
       color: var(--primary-color);
@@ -55,6 +106,18 @@
     &:not(:last-child) {
       margin-right: 35px;
     }
+  }
+
+  &--nav {
+    display: none;
+
+    @include tablet {
+      display: block !important;
+    }
+  }
+
+  @include tablet {
+    display: none;
   }
 }
 
@@ -75,6 +138,28 @@
     font-size: 18px;
     line-height: 150%;
     color: var(--ebony-color);
+    transition: color 0.3s ease-in-out;
+
+    @include mini-desktop {
+      font-size: 14px;
+    }
+  }
+
+  &:focus {
+    outline: 1px solid var(--primary-color);
+    outline-offset: 3px;
+  }
+
+  &:hover {
+    .contact-link__value {
+      color: var(--primary-color);
+    }
+  }
+
+  &:active {
+    .contact-link__value {
+      color: var(--primary-color);
+    }
   }
 
   &--phone {
@@ -83,5 +168,20 @@
 
   &--mail {
     background-image: url("../../img/icons-not-sprite/chat-icon.svg");
+  }
+}
+
+.logo {
+  &:focus {
+    outline: 1px solid var(--primary-color);
+    outline-offset: 3px;
+  }
+
+  @include mini-desktop {
+    max-width: 100px;
+  }
+
+  @include tablet {
+    max-width: none;
   }
 }

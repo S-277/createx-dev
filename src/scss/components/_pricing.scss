@@ -29,6 +29,10 @@
     0 30px 24px -10px rgba(154, 156, 165, 0.05),
     0 12px 10px -6px rgba(154, 156, 165, 0.04),
     0 4px 4px -4px rgba(30, 33, 44, 0.03);
+
+  @include small-tablet {
+    overflow-x: auto;
+  }
 }
 
 .table {
@@ -72,12 +76,6 @@
     }
   }
 
-  &__header {
-  }
-
-  &__row {
-  }
-
   &__heading {
     font-weight: 700;
     font-size: 24px;
@@ -115,6 +113,7 @@
     background-repeat: no-repeat;
   }
 
-  &__text {
+  @include small-tablet {
+    width: 1200px;
   }
 }

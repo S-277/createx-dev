@@ -2,12 +2,14 @@
   padding-top: 80px;
   padding-bottom: 120px;
   background-color: var(--athens-color);
+
+  @include small-tablet {
+    display: none;
+  }
 }
-.container {
-}
-.title {
-}
-.title--center {
-}
+
 .worldwide-map {
+  svg {
+    width: 100%;
+  }
 }

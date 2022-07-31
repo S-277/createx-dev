@@ -27,6 +27,10 @@
       letter-spacing: 1px;
       text-transform: initial;
     }
+
+    @include mobile {
+      font-size: 43px;
+    }
   }
 
   &__descr {
@@ -35,6 +39,10 @@
     font-size: 20px;
     line-height: 150%;
     color: var(--storm-color);
+
+    @include mobile {
+      font-size: 17px;
+    }
   }
 
   &__bottom {
@@ -116,6 +124,19 @@
       font-size: 64px;
       line-height: 120%;
       text-transform: initial;
+
+      @include tablet {
+        font-size: 38px;
+      }
+
+      @include mobile {
+        font-size: 28px;
+      }
     }
+  }
+
+  @include tablet {
+    min-height: auto;
+    background-image: none;
   }
 }

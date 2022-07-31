@@ -1,5 +1,5 @@
 .recent-news {
-  padding: 0 0 120px;
+  padding-bottom: 120px;
   background-color: var(--light-color);
 
   &__list {
@@ -7,6 +7,14 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(2, 255px);
     gap: 30px;
+
+    @include tablet {
+      grid-template-rows: initial;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   &__item {
@@ -15,10 +23,31 @@
     &:first-child {
       grid-column: 7 span;
       grid-row: 2 span;
+
+      @include tablet {
+        grid-column: 12 span;
+        grid-row: 1 span;
+      }
+
+      @include mobile {
+        grid-column: 4 span;
+      }
+    }
+
+    @include tablet {
+      grid-column: 12 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
     }
   }
 
   &__learn {
     margin-top: 80px;
+  }
+
+  @include mobile {
+    padding-bottom: 40px;
   }
 }

@@ -1,6 +1,6 @@
 .portfolio-section {
-  padding: 120px 0;
-  padding-bottom: 55px;
+  padding-top: 100px;
+  padding-bottom: 73px;
   background-color: var(--light-color);
 
   &__top {
@@ -8,16 +8,34 @@
     align-items: flex-end;
     justify-content: space-between;
     margin-bottom: 48px;
+
+    @include mobile {
+      flex-wrap: wrap;
+    }
   }
 
   &__slider-nav {
     transform: translateX(17px);
+
+    @include mobile {
+      transform: none;
+    }
   }
 
   &__title {
     margin: 0;
     padding-bottom: 8px;
     max-width: 710px;
+
+    @include tablet {
+      font-size: 40px;
+      line-height: 52px;
+    }
+
+    @include mobile {
+      font-size: 28px;
+      line-height: 40px;
+    }
   }
 
   &__items {
@@ -34,10 +52,20 @@
       opacity: 1;
       visibility: visible;
     }
+
+    @include big-desktop {
+      margin: 0;
+      padding: 0;
+    }
   }
-  
+
   &__learn {
     padding-top: 120px;
+  }
+
+  @include mobile {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
 
@@ -51,6 +79,15 @@
     0 12px 10px -6px rgba(154, 156, 165, 0.04),
     0 4px 4px -4px rgba(30, 33, 44, 0.03);
   background: var(--light-color);
+  transition: transform 0.2s ease-in-out;
+
+  source {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+  }
 
   &__content {
     display: flex;
@@ -66,6 +103,10 @@
     font-size: 20px;
     line-height: 150%;
     color: var(--ebony-color);
+
+    @include small-tablet {
+      text-align: center;
+    }
   }
 
   &__descr {
@@ -77,8 +118,9 @@
   }
 
   &__btn {
-    display: none;
+    display: block;
     margin-top: 24px;
+    margin-bottom: -90px;
     border: 1px solid currentColor;
     border-radius: 4px;
     padding: 13px 32px;
@@ -87,5 +129,23 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
     color: var(--primary-color);
+    transition: 0.3s ease-in-out;
+    will-change: margin;
+
+    @include small-tablet {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &:focus {
+    outline: 1px solid var(--primary-color);
+    outline-offset: 3px;
+  }
+
+  &:hover {
+    .portfolio-item__btn {
+      margin-bottom: 0;
+    }
   }
 }

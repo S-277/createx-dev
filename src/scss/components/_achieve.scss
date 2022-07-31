@@ -5,8 +5,20 @@
   background-repeat: no-repeat;
   background-color: var(--light-color);
 
+  @include small-tablet {
+    padding-bottom: 60px;
+  }
+
+  @include mobile {
+    padding-top: 40px;
+  }
+
   &__list {
     margin-bottom: 240px;
+
+    @include small-tablet {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   &__item {
@@ -18,6 +30,10 @@
     background-position: top center;
     background-size: 48px 48px;
     background-repeat: no-repeat;
+
+    @include small-tablet {
+      grid-column: 2 span;
+    }
   }
 
   &__value {
@@ -28,6 +44,10 @@
     line-height: 130%;
     text-align: center;
     color: var(--primary-color);
+
+    @include mini-desktop {
+      font-size: 32px;
+    }
   }
 
   &__text {
@@ -57,6 +77,27 @@
   &__content {
     display: flex;
     align-items: flex-start;
+
+    @include small-tablet {
+      display: block;
+    }
+  }
+
+  &__image {
+    @include mini-desktop {
+      max-width: 45%;
+    }
+
+    @include small-tablet {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 75%;
+    }
+
+    @include mobile {
+      max-width: 85%;
+    }
   }
 
   &__info {
@@ -67,12 +108,34 @@
     flex-shrink: 0;
     border-radius: 4px;
     padding: 60px 105px 70px 77px;
-    width: 735px;
+    max-width: 735px;
     box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08),
       0px 30px 24px -10px rgba(154, 156, 165, 0.05),
       0px 12px 10px -6px rgba(154, 156, 165, 0.04),
       0px 4px 4px -4px rgba(30, 33, 44, 0.03);
     background: var(--light-color);
+
+    @include big-desktop {
+      left: -120px;
+    }
+
+    @include mini-desktop {
+      left: 0;
+      top: 0;
+      max-width: 55%;
+    }
+
+    @include small-tablet {
+      padding: 30px 45px 35px 35px;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    @include mobile {
+      padding: 15px;
+      width: 100%;
+      max-width: 100%;
+    }
   }
 }
 
@@ -98,6 +161,7 @@
     }
 
     p {
+      margin: 0;
       font-weight: 700;
       font-size: 20px;
       line-height: 150%;
@@ -106,6 +170,11 @@
       &:not(:last-child) {
         margin-bottom: 30px;
       }
+    }
+
+    @include mobile {
+      padding-top: 10px;
+      padding-left: 32px;
     }
   }
 

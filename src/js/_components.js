@@ -3,3 +3,8 @@ import './components/circle-progress';
 import './components/accordion';
 import './components/portfolio';
 import './components/select';
+import './components/video';
+import './components/smooth-scroll';
+import './components/to-top';
+import './components/modals';
+import './components/burger';

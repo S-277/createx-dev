@@ -1,12 +1,16 @@
 .footer {
   padding: 80px 0;
-  color: rgba($color: #fff, $alpha: 0.6);
+  color: rgba(#fff, 0.6);
   background-color: var(--ebony-color);
 
   &__container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 30px;
+
+    @include mobile {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   &__title {
@@ -29,16 +33,35 @@
 
   &__left {
     grid-column: 7 span;
+
+    @include mobile {
+      grid-column: 4 span;
+    }
   }
 
   &__logo {
     margin-right: 55px;
+
+    &:focus {
+      outline: 1px solid var(--primary-color);
+      outline-offset: 3px;
+    }
   }
 
   &__top {
     display: flex;
     align-items: center;
     margin-bottom: 21px;
+
+    @include mobile {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__logo {
+    @include mobile {
+      margin-bottom: 15px;
+    }
   }
 
   &__descr {
@@ -53,6 +76,14 @@
     display: flex;
     flex-wrap: wrap;
     grid-column: 5 span;
+
+    @include small-tablet {
+      grid-column: 12 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
+    }
   }
 
   &__address {
@@ -61,6 +92,10 @@
 
   &__nav {
     grid-column: 8 span;
+
+    @include mobile {
+      grid-column: 4 span;
+    }
   }
 
   &__copyright {
@@ -76,6 +111,10 @@
       background-position: 2px center;
       background-size: 16px 16px;
       background-repeat: no-repeat;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
     }
   }
 }
@@ -141,6 +180,20 @@
 
   &__link {
     color: inherit;
+    transition: color 0.3s ease-in-out;
+
+    &:focus {
+      outline: 1px solid var(--primary-color);
+      outline-offset: 3px;
+    }
+
+    &:hover {
+      color: var(--light-color);
+    }
+
+    &:active {
+      color: var(--light-color);
+    }
   }
 }
 
@@ -151,10 +204,15 @@
   &__col {
     &:not(:last-child) {
       margin-right: 125px;
-    }
-  }
 
-  &__items {
+      @include small-tablet {
+        margin-right: 50px;
+      }
+
+      @include mobile {
+        margin-right: 15px;
+      }
+    }
   }
 
   &__item {
@@ -165,5 +223,28 @@
 
   &__link {
     color: inherit;
+    transition: color 0.3s ease-in-out;
+
+    &:focus {
+      outline: 1px solid var(--primary-color);
+      outline-offset: 3px;
+    }
+
+    &:hover {
+      color: var(--light-color);
+    }
+
+    &:active {
+      color: var(--light-color);
+    }
+  }
+
+  @include small-tablet {
+    margin-left: 10px;
+  }
+
+  @include mobile {
+    justify-content: space-evenly;
+    margin-left: 0;
   }
 }

@@ -6,6 +6,10 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 30px;
+
+    @include tablet {
+      display: block;
+    }
   }
 
   &__image {
@@ -15,6 +19,11 @@
   &__content {
     grid-column: 5 span;
     padding-left: 75px;
+
+    @include tablet {
+      padding-top: 25px;
+      padding-left: 0;
+    }
   }
 
   &__title {
@@ -42,9 +51,19 @@
       text-align: start;
       color: var(--ebony-color);
       background-color: var(--light-color);
+      transition: color 0.3s ease-in-out;
 
       &::before {
         display: none;
+      }
+
+      &:focus {
+        outline: 1px solid var(--primary-color);
+        outline-offset: 3px;
+      }
+
+      &:hover {
+        color: var(--storm-color);
       }
     }
 
@@ -94,5 +113,9 @@
         color: var(--storm-color);
       }
     }
+  }
+
+  @include tablet {
+    padding: 40px 0;
   }
 }
